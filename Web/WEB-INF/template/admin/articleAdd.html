@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑页面</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/edit.css" th:href="@{/static/css/edit.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+</head>
+<body>
+<div th:replace="~{/commons/bar::topmenu}"></div>
+    <div class="editwindow">
+        <form action="article" th:action="@{/article}" method="post">
+            <input name="_method" type="hidden" th:value="${article}==null?post:put">
+            <input name="article_id" type="hidden" th:value="${article}==null?null:${article.article_id}">
+            <div class="editsub"><input type="text" th:placeholder="${article}==null?title:${article.article_title}" placeholder="title" name="article_title"></div>
+            <div class="editsub"><textarea name="article_content" th:text="${article}==null?content:${article.article_content}"></textarea></div>
+            <div class="editsub"><input type="submit" name="submit" value="发布"></div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+<title>
+    Personal Center
+</title>
+</head>
+<body>
+<div th:replace="~{/commons/bar::topmenu}"></div>
+<h3 th:text="${msg}"></h3>
+<p>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>${Sessionscope.user.username}</td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td>${Sessionscope.user.email}</td>
+        </tr>
+    </table>
+</p>
+<p>
+    <a href="index.html">
+        <button href="">退出</button>
+    </a>
+
+</p>
+</body>
+</html>

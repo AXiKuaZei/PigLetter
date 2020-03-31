@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/articles.css" th:href="@{static/css/articles.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+    <link rel="shortcut icon" href="/static/public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>articles</title>
+</head>
+<body>
+<div th:replace="~{/commons/bar::topmenu}"></div>
+
+<div th:each="leetcode:${leetcodes}">
+    <div class="content">
+        <h3 th:text="${leetcode.leetcode_id}"></h3>
+        <pre th:text="${leetcode.leetcode_question}"></pre>
+        <hr>
+        <pre th:text="${leetcode.leetcode_answer}"></pre>
+    </div>
+</div>
+
+</body>
+</html>

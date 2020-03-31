@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑页面</title>
+    <link rel="stylesheet" type="text/css" href="static//css/edit.css" th:href="@{/static/css/edit.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+</head>
+<body>
+<div th:replace="~{/commons/bar::topmenu}"></div>
+<div class="editwindow">
+    <form action="/leetcode" th:action="@{/leetcode}" method="post">
+        <input name="_method" type="hidden" th:value="${leetcode}==null?post:put">
+        <input name="leetcode_id" type="hidden" th:value="${leetcode}==null?null:${leetcode.leetcode_id}">
+        <div class="editsub"><input type="text" placeholder="id" th:placeholder="${leetcode}==null?leetcode_id:${leetcode.leetcode_id}" name="leetcode_id"></div>
+        <div class="editsub"><input type="text" placeholder="title" th:placeholder="${leetcode}==null?leetcode_title:${leetcode.leetcode_title}" name="leetcode_title"></div>
+        <div class="editsub"><textarea name="leetcode_question" th:text="${leetcode}==null?leetcode_question:${leetcode.leetcode_question}"></textarea></div>
+        <div class="editsub"><textarea name="leetcode_answer" th:text="${leetcode}==null?leetcode_answer:${leetcode.leetcode_answer}"></textarea></div>
+        <div class="editsub"><input type="submit" name="submit" value="发布"></div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.content{
+    margin: auto;
+    box-sizing: border-box;
+    width: 80%;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    line-height: 37px;
+
+}
+.content pre{
+    margin: 17px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
