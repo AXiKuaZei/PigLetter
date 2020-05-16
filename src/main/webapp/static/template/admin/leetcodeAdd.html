@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑页面</title>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="stylesheet" type="text/css" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" th:href="@{/static/bootstrap-3.3.7-dist/css/bootstrap.min.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+</head>
+<body>
+<div th:replace="~{/commons/bar::topmenu}"></div>
+
+<div>
+    <form class="form-horizontal" action="leetcode" th:action="@{/leetcode}" method="post">
+        <input name="_method" type="hidden" th:value="${leetcode}==null?'post':'put'">
+        <input th:if="${leetcode}!=null" name="leetcode_id" type="hidden" th:value="${leetcode.leetcode_id}">
+        <div class="form-group" th:if="${leetcode}==null">
+            <label class="col-sm-2 control-label">力扣编号：</label><br>
+            <div class="col-sm-6" >
+                <input class="form-control" type="text" th:placeholder="${leetcode}==null?'id':${leetcode.leetcode_id}" placeholder="id" name="leetcode_id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">力扣标题：</label><br>
+            <div class="col-sm-6" >
+                <input class="form-control" type="text" th:placeholder="${leetcode}==null?'title':${leetcode.leetcode_title}" placeholder="title" name="leetcode_title">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">题目：</label><br>
+            <div class="col-sm-6" >
+                <textarea class="form-control" rows="8" cols="12" name="leetcode_question" th:text="${leetcode}==null?'question':${leetcode.leetcode_question}"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">解答：</label><br>
+            <div class="col-sm-6" >
+                <textarea class="form-control" rows="8" cols="12" name="leetcode_answer" th:text="${leetcode}==null?'answer':${leetcode.leetcode_answer}"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-1 col-sm-offset-5" >
+                <input class="form-control" type="submit" name="submit" value="发布">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+</body>
+</html>

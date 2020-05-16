@@ -1,0 +1,80 @@
+@import "https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css";
+
+body {
+    margin:0;
+    padding:0;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    background-color: #aab068;
+    /*background-size: cover;*/
+}
+
+.login-box,
+.register-box{
+    width: 320px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: aliceblue;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+.login-box h1,
+.register-box h1{
+    color: aliceblue;
+    float: top;
+    font-size: 36px;
+    border-bottom: 6px solid aliceblue;
+    padding: 13px;
+}
+
+.register-box a{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.message{
+    text-decoration: none;
+    color: #ff2b21;
+}
+
+.text-box{
+    width:100%;
+    alignment: center;
+    overflow: hidden;
+    font-size: 24px;
+    padding: 6px 0;
+    margin: 8px 0;
+}
+
+.text-box input{
+    border: none;
+    background: none;
+    color: aliceblue;
+    font-size: 20px;
+    width: 255px;
+    float: left;
+    padding: 2px;
+}
+
+.text-box i{
+    width: 32px;
+    float: left;
+    text-align: center;
+}
+
+.button{
+    width: 100%;
+    background: #368eb0;
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 12px 0;
+}

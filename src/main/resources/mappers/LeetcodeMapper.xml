@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pigletter.dao.LeetcodeMapper">
+
+
+    <select id="selectLeetcodes"  resultType="cn.pigletter.model.Leetcode">
+        select * from leetcode order by leetcode_id;
+    </select>
+
+    <select id="selectLeetcodesPage"  resultType="cn.pigletter.model.Leetcode">
+        select * from leetcode limit #{id},#{size}
+    </select>
+
+    <select id="selectLeetcodesPageNum"  resultType="Integer">
+        select count(*) from leetcode
+    </select>
+
+    <select id="selectLeetcodeByID"  resultType="cn.pigletter.model.Leetcode">
+        select * from leetcode where leetcode_id = #{id};
+    </select>
+
+    <insert id="insertLeetcode">
+        insert into leetcode(leetcode_id,leetcode_title,leetcode_question,leetcode_answer)
+        values(#{leetcode_id},#{leetcode_title},#{leetcode_question},#{leetcode_answer});
+    </insert>
+
+    <delete id="deleteLeetcodeByID">
+        delete from leetcode where leetcode_id = #{id};
+    </delete>
+
+    <update id="updateLeetcode">
+        update leetcode
+        <set>
+            <if test="leetcode_id!=null and !leetcode_id.equals(0)">
+                leetcode_id=#{leetcode_id},
+            </if>
+            <if test="leetcode_title!=null and !leetcode_title.equals(&quot;&quot;)">
+                leetcode_title=#{leetcode_title},
+            </if>
+            <if test="leetcode_question!=null and !leetcode_question.equals(&quot;&quot;)">
+                leetcode_question=#{leetcode_question},
+            </if>
+            <if test="leetcode_answer!=null and !leetcode_answer.equals(&quot;&quot;)">
+                leetcode_answer=#{leetcode_answer},
+            </if>
+        </set>
+        where leetcode_id=#{leetcode_id}
+    </update>
+
+</mapper>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="topmenu" th:fragment="topmenu">
+    <ul>
+        <li><a href="index" th:href="@{/index}">首页</a></li>
+        <li><a href="https://bilibili.com">哔哩哔哩</a></li>
+        <li><a href="#">星星海</a></li>
+        <li><a href="article" th:href="@{/article}">所有文章</a></li>
+        <li><a href="leetcode" th:href="@{/leetcode}">力扣记录</a></li>
+        <li><a href="#">资源站</a></li>
+        <li style="float: right;"><a href="register" th:href="${session.user}!=null?@{/logout}:@{/register}" th:text="${session.user}!=null?'注销':'注册'">注册</a></li>
+        <li style="float: right;"><a href="register" th:if="${session.user}!=null" th:href="@{/admin/console}" th:text="仪表盘">仪表盘</a></li>
+        <div class="topmenu2">
+            <li><a href="login" th:href="${session.user}!=null?@{/personalCenter}:@{/login}" th:text="${session.user}!=null?${session.user.user_name}:'登录'">用户名</a></li>
+        </div>
+
+    </ul>
+</div>
+
+</body>
+</html>

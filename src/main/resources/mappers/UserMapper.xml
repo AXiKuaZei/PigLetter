@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pigletter.dao.UserMapper">
+
+
+    <select id="selectUserByName" parameterType="String" resultType="cn.pigletter.model.User">
+        select * from user where user_name = #{str}
+    </select>
+
+    <insert id="insertNewUser" parameterType="cn.pigletter.model.User">
+        insert into user(user_name,user_password,user_email,register_date)
+        values(#{user_name},#{user_password},#{register_date},#{register_date})
+    </insert>
+
+
+</mapper>

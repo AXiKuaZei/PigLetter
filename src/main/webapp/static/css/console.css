@@ -1,0 +1,43 @@
+.nonActiveNav {
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    padding: 7px;
+    background-color: cadetblue;
+    color: #3c3c3c;
+}
+
+.activeNav {
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    padding: 7px;
+    background-color: salmon;
+    color: #3c3c3c;
+}
+
+.nonActiveNav:hover{
+     cursor: pointer;
+     display: block;
+     padding: 7px;
+     background-color: #fa9889;
+     color: #3c3c3c;
+ }
+
+
+#articlelist{
+    box-sizing: border-box;
+    width: 72%;
+    float: left;
+    display: block;
+}
+
+#leetcodelist{
+    box-sizing: border-box;
+    width: 72%;
+    float: left;
+    display: none;
+}
+
+
+

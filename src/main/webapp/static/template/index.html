@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/WEB-INF/static/css/index.css" th:href="@{/static/css/index.css}">
+    <link rel="shortcut icon" href="/static/public/favicon.ico" th:href="@{/static/public/favicon.ico}"/>
+    <title>PigLetter</title>
+</head>
+<body>
+
+    <div th:replace="~{/commons/bar::topmenu}"></div>
+    
+    <div class="colunm">
+        <div class="textcontent">
+            <div class="card" th:each="article:${articles}">
+                <h1 th:text="${article.article_title}">今天的标题</h1>
+                <div style="width: 100%;text-align: right"><h4 th:text="${article.user_name}">Hello, world!</h4></div>
+                <div style="width: 100%;text-align: right"><h4 th:text="${#dates.format(article.publish_time,'yyyy-MM-dd HH:mm')}">Hello, world!</h4></div>
+                <p th:text="${article.article_content}" class="pre-pre" ></p>
+            </div>
+        </div>
+
+        <div class="sidemenu">
+            <div class="card">
+                <h1>关于网站</h1>
+                <p>巴拉巴拉巴拉</p>
+            </div>
+
+            <ul>
+                <li><span style="background-color: rgb(124, 235, 101);">目录</span></li>
+                <li><a href="#">一些小事</a></li>
+                <li><a href="#">一些小事</a></li>
+                <li><a href="#">一些小事</a></li>
+                <li><a href="#">一些小事</a></li>
+            </ul>  
+
+        </div>
+
+
+    </div>
+
+    <div class = "footer">
+        <a href="index.html">PigLetter</a>
+        <p style="display: inline;">axikuazei@gmail.com</p>
+    </div>
+</body>
+</html>

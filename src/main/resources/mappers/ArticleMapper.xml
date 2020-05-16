@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pigletter.dao.ArticleMapper">
+
+    <select id="selectArticles"  resultType="cn.pigletter.model.Article">
+        select * from article order by publish_time DESC
+    </select>
+
+
+    <select id="selectArticlesPageNum" resultType="Integer">
+        select count(*) from article
+    </select>
+
+    <select id="selectArticlesPageNumUser" resultType="Integer">
+        select count(*) from article
+        where user_id=#{user_id}
+    </select>
+
+
+    <select id="selectArticlesPageUser"  resultType="cn.pigletter.model.Article">
+        select *
+        from article
+        where user_id=#{user_id}
+        ORDER BY publish_time DESC
+        limit #{id},#{size}
+    </select>
+
+    <select id="selectArticlesPage"  resultType="cn.pigletter.model.Article">
+        select article_id,article_title,article_content,publish_time,a.user_id,user_name
+        from article a
+        left join user u on a.user_id=u.user_id
+        ORDER BY publish_time DESC
+        limit #{id},#{size}
+    </select>
+
+    <select id="selectArticleByID"  resultType="cn.pigletter.model.Article">
+        select * from article where article_id = #{id}
+    </select>
+
+    <insert id="insertArticle" parameterType="cn.pigletter.model.Article">
+        insert into article(article_title,article_content,publish_time,user_id)
+        values(#{article_title}, #{article_content},now(),#{user_id})
+    </insert>
+
+    <delete id="deleteArticleByID">
+        delete from article where article_id = #{id}
+    </delete>
+
+    <update id="updateArticle">
+        update article
+        <set>
+            <if test="article_title!=null and !article_title.equals(&quot;&quot;)">
+                article_title=#{article_title},
+            </if>
+            <if test="article_content!=null and !article_content.equals(&quot;&quot;)">
+                article_content=#{article_content},
+            </if>
+        </set>
+        where article_id=#{article_id}
+    </update>
+
+</mapper>

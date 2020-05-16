@@ -1,0 +1,195 @@
+/* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+@media screen and (max-width: 1000px) {
+    .textcontent, .sidemenu {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+   
+  /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+  @media screen and (max-width: 400px) {
+    .topmenu a {
+      float: none;
+      width: 100%;
+    }
+  }
+
+/* 整体背景和字体设置 */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#ececec;
+    padding: 0px;
+    margin: 0;
+}
+
+.pre-pre{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    text-justify: inter-character;
+    font-size: large;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+/* 导航栏设置 */
+.topmenu {
+    background-color: #5e5757;
+    margin-bottom: 4px;
+}
+
+.topmenu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.topmenu li{
+    display: block;
+    float: left; 
+}
+
+
+.topmenu a{
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 12px 14px;
+    text-align: center;
+    color:#cad2da;
+}
+
+.topmenu a:visited{
+    text-decoration: none;
+}
+
+.topmenu a:hover{
+    background-color: #7c7373;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.topmenu2{
+    float: right;
+}
+
+.topmenu2 a{
+    text-decoration: none;
+    color: #504a4a;
+    background-color: #64c5a5;
+}
+
+.topmenu2 a:hover{
+    color: #5e5757;
+    background-color: #70e2bc;
+    text-decoration: none;
+}
+
+
+
+/* 主体设置 */
+.colunm{
+    background-color:#ececec;
+    padding: 20px;
+    width: 83%;
+    height:100%;
+    margin: 0 auto;
+}
+.colunm:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 正文设置 */
+.textcontent{
+    float: left;
+    width: 72%;
+    box-sizing:border-box;
+    padding-left: 20px;
+    background-color:#ececec;
+}
+
+/* 侧边栏设置 */
+.sidemenu{
+    float: left;
+    width: 25%;
+    box-sizing:border-box;
+    padding-left: 40px;
+    /*margin-right: 20px;*/
+    background-color:#ececec;
+    position: sticky;
+    top: 0px;
+}
+
+
+.sidemenu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 3px;
+
+}
+
+.sidemenu li{
+    display: block;
+    margin-bottom: 4px;
+}
+
+.sidemenu a,.sidemenu span{
+    font-size: 20px;
+    padding: 14px 16px;
+    margin-bottom: 4px;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: #000;
+    background-color: cadetblue;
+}
+
+.sidemenu li a:hover{
+    background-color: salmon;
+    
+}
+
+.sidemenu li a:active{
+    background-color: rgb(160, 86, 78);
+    
+}
+
+
+/* 图像部分 */
+.img {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+   
+  /* 文章卡片效果 */
+.card {
+    background-color: white;
+    padding: 17px 37px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+/* 页脚设置 */
+.footer{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #69746d;
+}
+
+.footer a{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #69746d;
+    color: black;
+}
+
+
